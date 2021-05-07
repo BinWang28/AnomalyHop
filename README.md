@@ -62,8 +62,12 @@ chmod +x run.sh
 |Zipper|0.966|
 |All classes| 0.959|
 
+## 5. Visualization results
+<p align="center">
+    <img src="mvtec_result/1.pdf" width="1000"\>
+</p>
 
-## 5. Citation
+## 6. Citation
 
 If you find our model is useful in your research, please consider cite our paper: [AnomalyHop: An SSL-based Image Anomaly Localization Method](https://arxiv.org/):
 

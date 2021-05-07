@@ -67,7 +67,7 @@ chmod +x run.sh
     Examples from cable, capsule and wood classes.
     <img src="mvtec_result/2.png" width="500"\>
     Examples from grid class.
-    <img src="mvtec_result/1.png" width="600"\>
+    <img src="mvtec_result/1.png" width="400"\>
 </p>
 
 

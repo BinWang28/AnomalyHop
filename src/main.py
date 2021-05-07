@@ -295,7 +295,7 @@ def main():
 
         end_time = time.time()
 
-        print('Time for testing process: {%.2f} for {} images'.format(end_time - start_time,test_imgs.shape[0]))
+        print('Time for testing process: {} for {} images'.format(end_time - start_time,test_imgs.shape[0]))
 
         # calculate image-level ROC AUC score
         img_scores = scores_final.reshape(scores_final.shape[0], -1).max(axis=1)

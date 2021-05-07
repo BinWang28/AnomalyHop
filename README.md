@@ -64,13 +64,13 @@ chmod +x run.sh
 
 ## 5. Visualization results
 <p align="center">
-    Examples from cable, capsule and wood classes.
+    *Examples from cable, capsule and wood classes.
     <img src="mvtec_result/2.png" width="500"\>
 </p>
 
 <p align="center">
-    Examples from grid class.
-    <img src="mvtec_result/1.png" width="400"\>
+    *Examples from grid class.
+    <img src="mvtec_result/1.png" width="500"\>
 </p>
 
 ## 6. Citation

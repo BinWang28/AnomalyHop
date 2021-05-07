@@ -2,6 +2,10 @@
 
 Implementation for our paper. The paper can be found at [AnomalyHop](https://arxiv.org/).
 
+<p align="center">
+    <img src="mvtec_result/3.png" width="1000"\>
+</p>
+
 ## 1. Install Requirements / Environmen
 
 We provide the environment setup information for virtual environment (anacodna). The environment can be easily install with (conda required):

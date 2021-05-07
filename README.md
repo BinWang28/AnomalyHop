@@ -2,7 +2,17 @@
 
 Implementation for our paper. The paper can be found at [AnomalyHop](https://arxiv.org/).
 
-## 
+## Requirements
+
+We provide the environment setup information for virtual environment (anacodna). The environment can be easily install with (conda required):
+```
+conda env create -f environment.yml
+conda activate AnomalyHop
+```
+
+## 1. Dataset Preparation
+
+T
 
 ## Download Dataset
 

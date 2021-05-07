@@ -37,6 +37,29 @@ chmod +x run.sh
 
 ## 4. Our performance
 
+* Anomaly Localization (ROCAUC)
+
+|MvTec|AnomalyHop (ours)|
+|:---:|:---:|
+|Carpet| 0.988|
+|Grid| 0.936|
+|Leather|0.990 |
+|Tile|0.917 |
+|Wood| 0.940|
+|All texture classes| 0.953|
+|Bottle|0.981 |
+|Cable|0.949|
+|Capsule| 0.982|
+|Hazelnut|0.979 |
+|Metal nut| 0.967|
+|Pill|0.946 |
+|Screw| 0.972|
+|Toothbrush|0.986 |
+|Transistor| 0.968|
+|Zipper|0.976|
+|All object classes|0.971|
+|All classes| 0.965|
+
 
 ## 5. Citation
 
@@ -53,6 +76,7 @@ If you find our model is useful in your research, please consider cite our paper
 
 
 Contact person: Bin Wang, bwang28c@gmail.com
+
 http://mcl.usc.edu/
 
 ## Acknowledgement

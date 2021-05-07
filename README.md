@@ -1,24 +1,31 @@
-# AnomalyHop
-Code for AnomalyHop
 
-## Download the dataset: MVTec AD
 
-Download the dataset
+
+## Download Dataset
+
 ```
+cd datasets
+
 wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/mvtec_anomaly_detection.tar.xz
-```
 
-Extract dataset from compressed package
-```
-tar -xf name_of_dataset
-```
+tar -xf mvtec_anomaly_detection.tar.xz
 
-Put in folder datasets/mvtec_anomaly_detection
-
-
-## Run code with
+cd ..
 
 ```
-chmod +x run.sh
-./run.sh
+
+## Install Packages
+
 ```
+conda create -f environment.yml
+```
+
+## Our performance
+
+## Our speed
+
+
+## Citation
+
+## Acknowledgement
+

@@ -7,14 +7,20 @@
 @Version :   1.0
 '''
 
-# here put the import lib
-
 import argparse
 
-
 def parse_args():
-    parser = argparse.ArgumentParser('PaDiM')
-    parser.add_argument('--data_path', type=str, default='./datasets/mvtec_anomaly_detection')
+    
+    parser = argparse.ArgumentParser('AnomalyHop')
+
+    parser.add_argument('--data_path', type=str, default='./datasets')
     parser.add_argument('--save_path', type=str, default='./mvtec_result')
-    #parser.add_argument('--arch', type=str, choices=['resnet18', 'wide_resnet50_2'], default='wide_resnet50_2')
+    parser.add_argument('--kernel', nargs='+', help='kernel sizes as a list')
+    parser.add_argument('--num_comp', nargs='+', help='number of components kept for each stage')
+    parser.add_argument('--distance_measure', type=str, choices=['self_ref','loc_gaussian', 'glo_gaussian'])
+    parser.add_argument('--layer_of_use', nargs='+', help='layers output used to compute gaussian')
+    parser.add_argument('--hop_weights', nargs='+', help='weights for each hop')
+    parser.add_argument('--class_names', nargs='+', help='classes for evaluation')
+
     return parser.parse_args()
+

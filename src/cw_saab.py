@@ -32,14 +32,14 @@ def window_process4(samples, kernel_size, stride, dilate, padFlag=True):
         samples2 = np.pad(samples,((0,0),(0,0),(int(kernel_size/2),int(kernel_size/2)),(int(kernel_size/2),int(kernel_size/2))),'reflect')
     else:
         samples2 = samples
-#    print('-- window_process4 cuboid after patching', samples2.shape) 
+
     n, c, h, w= samples2.shape
     output_h = (h - kernel_size) // stride + 1
     output_w = (w - kernel_size) // stride + 1
     patches = view_as_windows(np.ascontiguousarray(samples2), (1, c, kernel_size, kernel_size), step=(1, c, stride, stride))
-#    patches = view_as_windows(np.ascontiguousarray(samples2), (2, c//2, kernel_size, kernel_size), step=(2, c//2, stride, stride))
-    #bin, print('-- window_process4 cuboid after view_as_windows', patches.shape) 
-    # --> [output_n=n, output_c==1, output_h, output_w, 4d_kernel_n==1, 4d_kernel_c==c, 4d_kernel_h, 4d_kernel_w]
+
+
+
     patches = patches.reshape(n,output_h, output_w, c, kernel_size, kernel_size)
     assert dilate >=1
     patches = patches[:,:,:,:,::dilate,::dilate]   # arbitary dilate, not necessary to take 9 positions
@@ -73,7 +73,7 @@ def find_kernels_pca(samples, num_kernel, rank_ac, recFlag):
         num_components(int): number of valid AC components, considering constrains of num_kernel(int or float by energy) and rank_ac (if recFlag==True)
         intermediate_ind(1d np.array): conditional energy of valid AC components
     '''
-    #bin, print('find_kernels_pca/samples.shape:', samples.shape)
+
     # determination by number of kernels
     if num_kernel == 'full': #or num_kernel > min(samples.shape):
         pca = PCA(svd_solver = 'full')
@@ -244,8 +244,8 @@ def multi_saab_chl_wise(sample_images_init,
     # for each layer
     i_valid = -1
     for i in range(num_layers):
-        print('--------stage %d --------' % i)
-        print('Sample/cuboid_previous.shape:', sample_images.shape)
+        #print('--------stage %d --------' % i)
+        #print('Sample/cuboid_previous.shape:', sample_images.shape)
         
         # prepare for next layer
         intermediate_ind_layer = pca_params['Layer_%d/intermediate_ind' % (i-1)]  # float list
@@ -256,12 +256,12 @@ def multi_saab_chl_wise(sample_images_init,
             intermediate_index_layer = np.where(intermediate_ind_layer > pca_params['energy_perc_thre'])[0]
             sample_images = sample_images[:, intermediate_index_layer, :, :]
 #            print('intermediate_ind_layer:', intermediate_index_layer)
-            print('Sample/cuboid_forNextStage.shape:', sample_images.shape)
+            #print('Sample/cuboid_forNextStage.shape:', sample_images.shape)
             
             # Maxpooling
             if i > 0:
                 sample_images = block_reduce(sample_images, (1, 1, 2, 2), np.max)
-                print('Sample/max_pooling.shape:', sample_images.shape)
+                #print('Sample/max_pooling.shape:', sample_images.shape)
                 
             [n, num_node, h, w] = sample_images.shape
             
@@ -303,7 +303,7 @@ def multi_saab_chl_wise(sample_images_init,
             pca_params['Layer_%d/bias' % i] = bias_layer_new
             pca_params['Layer_%d/h'% i] = sample_images.shape[-2]
             pca_params['Layer_%d/w'% i] = sample_images.shape[-1]
-            print('Sample/cuboid_toNextStage.shape:', sample_images.shape)
+            #print('Sample/cuboid_toNextStage.shape:', sample_images.shape)
 #            print()
             
             if collectFlag:
@@ -357,8 +357,8 @@ def inference_chl_wise(pca_params_init,
     feature_all = []
     # for each layer
     for i in range(current_stage+1, target_stage+1, 1):
-        print('--------stage %d --------' % i)
-        print('Sample/cuboid_previous.shape:', sample_images.shape)
+        #print('--------stage %d --------' % i)
+        #print('Sample/cuboid_previous.shape:', sample_images.shape)
         
         intermediate_ind_layer = pca_params['Layer_%d/intermediate_ind' % (i-1)] # float list
         intermediate_index_layer = np.where(intermediate_ind_layer > pca_params['energy_perc_thre'])[0]
@@ -375,7 +375,7 @@ def inference_chl_wise(pca_params_init,
             # Maxpooling
             if i > 0:
                 sample_images = block_reduce(sample_images, (1, 1, 2, 2), np.max)
-                print('Sample/max_pooling.shape:', sample_images.shape)
+                #print('Sample/max_pooling.shape:', sample_images.shape)
                 
             [n, num_node, h, w] = sample_images.shape
             feature_layer = []
@@ -400,7 +400,7 @@ def inference_chl_wise(pca_params_init,
             sample_images = np.concatenate(feature_layer, axis=1)  # only control features for further growing
             pca_params['Layer_%d/h'% i] = sample_images.shape[-2]
             pca_params['Layer_%d/w'% i] = sample_images.shape[-1]
-            print('Sample/cuboid_toNextStage.shape:', sample_images.shape)
+            #print('Sample/cuboid_toNextStage.shape:', sample_images.shape)
 #            print()
             
             if collectFlag:
@@ -415,30 +415,3 @@ def inference_chl_wise(pca_params_init,
 
 
 
-
-
-#%%
-if __name__ == "__main__":
-
-    init_images = np.random.rand(5, 1, 33, 44) # (num_img, num_channel, img_h, img_w)
-    
-    print('\n######  Saak Feature Extraction  ######\n')
-    params, feature_all, feature_last = multi_saab_chl_wise(init_images, 
-                                                            [3], # stride, 
-                                                            [3], # kernel_size, 
-                                                            [1], #dilate,
-                                                            ['full'], #num_kernels,
-                                                            0.125, #energy_perc_thre, # int(num_nodes) or float(presE, var) for nodes growing down
-                                                            padFlag = [False],
-                                                            recFlag = True,
-                                                            collectFlag = True)
-
-
-    print('\n###### check inference_chl_wise ######\n')
-    __, __, feature1 = inference_chl_wise(params,
-                                          init_images, True,
-                                          -1, 0,
-                                          collectFlag=False)
-    print(set((feature_last.reshape(-1) == feature1.reshape(-1)).tolist()))
-
-    print()

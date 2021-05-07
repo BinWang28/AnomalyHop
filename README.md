@@ -64,7 +64,7 @@ chmod +x run.sh
 
 ## 5. Visualization results
 <p align="center">
-    <img src="mvtec_result/1.png" width="800"\>
+    <img src="mvtec_result/1.png" width="600"\>
     <img src="mvtec_result/2.png" width="500"\>
 </p>
 

@@ -24,11 +24,15 @@ cd ..
 
 ## 3. Reproduce our result
 
+An example for carpet class:
+```
+python ./src/main.py --kernel 7 6 3 2 4 --num_comp 4 4 4 4 4 --layer_of_use 1 2 3 4 5 --distance_measure glo_gaussian --hop_weights 0.2 0.2 0.4 0.5 0.1 --class_names carpet
+```
 
+To reproduce all results from the paper:
 ```
-```
-
-```
+chmod +x run.sh
+./run.sh
 ```
 
 ## Install Packages

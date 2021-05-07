@@ -39,26 +39,24 @@ chmod +x run.sh
 
 * Anomaly Localization (ROCAUC)
 
-|MvTec|AnomalyHop (ours)|
+|MvTec AD|AnomalyHop (ours)|
 |:---:|:---:|
-|Carpet| 0.988|
-|Grid| 0.936|
-|Leather|0.990 |
-|Tile|0.917 |
-|Wood| 0.940|
-|All texture classes| 0.953|
-|Bottle|0.981 |
-|Cable|0.949|
-|Capsule| 0.982|
-|Hazelnut|0.979 |
-|Metal nut| 0.967|
-|Pill|0.946 |
-|Screw| 0.972|
-|Toothbrush|0.986 |
-|Transistor| 0.968|
-|Zipper|0.976|
-|All object classes|0.971|
-|All classes| 0.965|
+|Carpet| 0.942|
+|Grid| 0.984|
+|Leather|0.991 |
+|Tile|0.932 |
+|Wood| 0.903|
+|Bottle|0.975 |
+|Cable|0.904|
+|Capsule| 0.965|
+|Hazelnut|0.971 |
+|Metal nut| 0.956|
+|Pill|0.970 |
+|Screw| 0.960|
+|Toothbrush|0.982 |
+|Transistor| 0.981|
+|Zipper|0.966|
+|All classes| 0.959|
 
 
 ## 5. Citation

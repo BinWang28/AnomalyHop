@@ -35,15 +35,27 @@ chmod +x run.sh
 ./run.sh
 ```
 
-## Install Packages
+## 4. Our performance
 
 
-## Our performance
+## 5. Citation
 
-## Our speed
+If you find our model is useful in your research, please consider cite our paper: [AnomalyHop: An SSL-based Image Anomaly Localization Method](https://arxiv.org/):
+
+```
+@article{anomalyhop,
+    title = {{AnomalyHop}: An SSL-based Image Anomaly Localization Method},
+    author = {tobe filled},
+    journal={tobe filled},
+    year={2021}
+}
+```
 
 
-## Citation
+Contact person: Bin Wang, bwang28c@gmail.com
+http://mcl.usc.edu/
 
 ## Acknowledgement
+
+The code is partially adapted from [PaDiM](https://github.com/xiahaifeng1995/PaDiM-Anomaly-Detection-Localization-master)
 

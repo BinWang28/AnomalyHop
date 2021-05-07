@@ -76,6 +76,11 @@ chmod +x run.sh
     <img src="mvtec_result/1.png" width="500"\>
 </p>
 
+If you want to save the figures, just uncomment the following line in main.py
+```
+plot_fig(test_imgs, scores_final, gt_mask_list, threshold, save_dir, class_name)
+```
+
 ## 6. Citation
 
 If you find our model is useful in your research, please consider cite our paper: [AnomalyHop: An SSL-based Image Anomaly Localization Method](https://arxiv.org/):

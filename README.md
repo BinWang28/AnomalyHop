@@ -1,6 +1,9 @@
 # AnomalyHop: An SSL-based Image Anomaly Localization Method
 
 Implementation for our paper. The paper can be found at [AnomalyHop](https://arxiv.org/).
+* Training in two minutes for each class
+* No Neural Network / No Pre-training
+* Successive Subspace Learning
 
 <p align="center">
     <img src="mvtec_result/3.png" width="1000"\>

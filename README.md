@@ -12,7 +12,8 @@ conda activate AnomalyHop
 
 ## 1. Dataset Preparation
 
-T
+MVTec AD datasets can be downloaded from: [MVTec website](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
+
 
 ## Download Dataset
 

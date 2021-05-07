@@ -69,7 +69,7 @@ chmod +x run.sh
 </p>
 
 <p align="center">
-    *Examples from grid class.
+    *Examples from grid class.<tr>
     <img src="mvtec_result/1.png" width="500"\>
 </p>
 

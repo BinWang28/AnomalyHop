@@ -332,7 +332,7 @@ def main():
 
 
     for key, value in all_results.items():
-        #print(key, ': ', value)
+        print(key, ': ', value)
 
         # write to record
         with open('./job_logs/'+key+'.txt', 'a') as f:

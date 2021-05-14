@@ -88,9 +88,9 @@ If you find our model is useful in your research, please consider cite our paper
 ```
 @article{anomalyhop,
     title = {{AnomalyHop}: An SSL-based Image Anomaly Localization Method},
-      author={Kaitai Zhang and Bin Wang and Wei Wang and Fahad Sohrab and Moncef Gabbouj and C. -C. Jay Kuo},
+    author = {tobe filled},
     journal={tobe filled},
-      year={2021},
+    year={2021}
 }
 ```
 

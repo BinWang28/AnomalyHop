@@ -1,6 +1,6 @@
 # AnomalyHop: An SSL-based Image Anomaly Localization Method
 
-Implementation for our paper. The paper can be found at [AnomalyHop](https://arxiv.org/).
+Implementation for our paper. The paper can be found at [AnomalyHop](https://arxiv.org/abs/2105.03797).
 * Training in two minutes for each class
 * No Neural Network / No Pre-training
 * Successive Subspace Learning
@@ -83,14 +83,14 @@ plot_fig(test_imgs, scores_final, gt_mask_list, threshold, save_dir, class_name)
 
 ## 6. Citation
 
-If you find our model is useful in your research, please consider cite our paper: [AnomalyHop: An SSL-based Image Anomaly Localization Method](https://arxiv.org/):
+If you find our model is useful in your research, please consider cite our paper: [AnomalyHop: An SSL-based Image Anomaly Localization Method](https://arxiv.org/abs/2105.03797):
 
 ```
 @article{anomalyhop,
     title = {{AnomalyHop}: An SSL-based Image Anomaly Localization Method},
-    author = {tobe filled},
+      author={Kaitai Zhang and Bin Wang and Wei Wang and Fahad Sohrab and Moncef Gabbouj and C. -C. Jay Kuo},
     journal={tobe filled},
-    year={2021}
+      year={2021},
 }
 ```
 

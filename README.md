@@ -92,6 +92,13 @@ If you find our model is useful in your research, please consider cite our paper
   journal={arXiv preprint arXiv:2105.03797},
   year={2021}
 }
+   
+@article{anomalyhop,
+  title={{AnomalyHop}: An SSL-based Image Anomaly Localization Method}},
+  author={Zhang, Kaitai and Wang, Bin and Wang, Wei and Sohrab, Fahad and Gabbouj, Moncef and Kuo, C.-C. Jay},
+  journal={IEEE Visual Communications and Image Processing (VCIP)},
+  year={2021}
+}
 ```
 
 
